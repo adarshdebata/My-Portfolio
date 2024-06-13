@@ -35,13 +35,16 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2rem 9%;
+  padding: 1rem 9%;
   background: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
   transition: 0.3s;
+}
+.header.sticky {
+  background: var(--mainBackgroundColor);
 }
 .logo {
   font-size: 2.5rem;
@@ -63,7 +66,7 @@ nav a:hover,
 nav a.active {
   color: var(--mainStyleColor);
 }
-#menu {
+#menuIcon {
   font-size: 3.5rem;
   color: var(--mainTextColor);
   cursor: pointer;
@@ -445,4 +448,51 @@ span {
 }
 .returnHome a:hover i {
   color: var(--mainStyleColor)
+}
+
+/* Smaller Screen Adjustments */
+@media (max-width:1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width:991px) {
+  .header {
+    padding: 2rem 4%; 
+  }
+  section {
+    padding: 10rem 4% 2rem;
+  }
+  .home {
+    padding: 0 4%;
+  }
+  .footer {
+    padding: 2rem 4%;
+  }
+}
+
+@media (max-width:768px) {
+  .header {
+    background: var(--mainBackgroundColor);
+  }
+
+  #menuIcon {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 4%;
+    background: var(--mainBackgroundColor);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .2);
+  }
+  nav a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
 }
